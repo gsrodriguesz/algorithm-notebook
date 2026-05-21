@@ -1,32 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Notebook</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 
-<title>Navegador do Repositório</title>
+    <!-- Prism CSS (Syntax Highlighting) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-twilight.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+        rel="stylesheet" />
 
-<link rel="stylesheet" href="assets/styles.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </head>
-<body>
 
-<div class="container">
+<body class="line-numbers">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <!-- <div class="logo">
+                    <span class="logo-icon"></span>
+                    <h1>Algorithm Notebook</h1>
+                </div> -->
+                <div class="repo-info" id="repo-info">Loading repo...</div>
+            </header>
+            <div class="file-explorer" id="file-explorer">
+                <!-- File tree will be rendered here -->
+                <div class="loading-state">Initializing connection...</div>
+            </div>
+        </aside>
 
-    <aside id="sidebar">
-        <h2>Arquivos</h2>
-        <div id="tree"></div>
-    </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="breadcrumbs" id="breadcrumbs">
+                    <span class="crumb">repo:/</span>
+                </div>
+                <div class="actions">
+                    <a class="action-btn" title="View on GitHub" id="github-link" target="_blank" href="#"
+                        style="pointer-events: none; opacity: 0.5;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </header>
 
-    <main id="content">
-        <h1>Selecione um arquivo</h1>
-    </main>
+            <div class="viewer-container">
+                <div id="welcome-screen" class="welcome-screen">
+                    <div class="welcome-glitch" data-text="SELECT_FILE">SELECT_FILE</div>
+                    <p>Navigate the repository to view code or markdown.</p>
+                </div>
 
-</div>
+                <div id="content-viewer" class="content-viewer hidden">
+                    <div id="file-loading" class="file-loading hidden">
+                        <div class="loader-bar"></div>
+                    </div>
+                    <div id="markdown-body" class="markdown-body hidden"></div>
+                    <pre id="code-body" class="code-body hidden"><code id="code-content"></code></pre>
+                </div>
+            </div>
+        </main>
+    </div>
 
-<script src="assets/app.js"></script>
-
+    <!-- Custom App Logic -->
+    <script src="assets/app.js" type="module"></script>
 </body>
+
 </html>

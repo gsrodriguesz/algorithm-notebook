@@ -15,7 +15,7 @@ This repository serves as both a learning journal and a structured knowledge bas
 - 💻 Code implementations
 - 📖 References and study materials
 
-<!-- ## Repository Structure
+## Repository Structure
 
 ```text
 algorithm-notebook/
@@ -26,10 +26,10 @@ algorithm-notebook/
 │   ├── dynamic-programming/
 │   └── ...
 │
-├── data-structures/
+<!-- ├── data-structures/
 │   ├── segment-tree/
 │   ├── union-find/
-│   └── ...
+│   └── ... -->
 │
 ├── problems/
 │   ├── OBI/
@@ -42,7 +42,7 @@ algorithm-notebook/
 ├── assets/
 │
 └── index.html
-``` -->
+```
 
 ## Website
 
